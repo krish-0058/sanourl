@@ -1,0 +1,60 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sano url</title>
+  <link rel="icon" href="/logo.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+  <header class="header">
+    <div class="title">
+      <img src="/logo.png" alt="sano url" class="logo">
+      <h1 class="title">sano url</h1> 
+    </div>     
+  
+
+    <button id="logoutBtn" class="logout-btn">Free !!!</button>
+  </header>
+
+  <main class="main">
+    <div class="card">
+      <h2 class="card-title">Shorten Your URL</h2>
+
+      <!-- Form starts -->
+      <form class="input-group" id="urlForm" action="/shorten" method="POST">
+        <input 
+          type="url" 
+          name="originalUrl" 
+          id="longUrlInput" 
+          placeholder="Enter long URL..." 
+          class="url-input" 
+          required />
+        <button type="submit" class="short-btn">Short It</button>
+      </form>
+
+      
+      <p><a href="<%= shortCode ? '/' + shortCode : '#' %>"><%= displayUrl %></a></p>
+
+
+      <form action="/" method="get"><button id="recentUrlsBtn" class="recent-btn">Refresh</button></form>
+      
+
+      <div id="messageBox" class="message-box hidden">
+        <div class="message-content">
+          <p id="messageText"></p>
+          <button id="closeMessageBox" class="ok-btn">OK</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 sano url. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  </body>
+  </html>
