@@ -44,7 +44,7 @@ app.get("/", (req, res) => {
 app.post("/shorten",async (req,res)=>{
   try{
     const {originalUrl} = req.body
-    const shortCode = nanoid(11)
+    const shortCode = nanoid(5)
   
     const newData = new url({originalUrl,shortCode})
     await newData.save()
